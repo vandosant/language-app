@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+gem 'haml', '~> 4.0.5'
+
 group :test do
   gem 'rspec-rails', '2.14.2'
   gem 'capybara', '2.2.1'
