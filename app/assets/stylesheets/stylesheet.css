@@ -13,7 +13,7 @@
 
 
 body {
-	background-color:#000;
+	background-color:#F0D399;
 	
 }
 
@@ -27,21 +27,21 @@ body {
 }
 
 header {
-	background-color: blue;
+	background-color: #B8C99D;
 }
 
 nav {
-	background-color: red;
+	background-color: #BF496A;
 	overflow: hidden; 
 }
 
 #content {
-	background-color: white;
+	background-color: #F0D399;
 }
 
 
 footer {
-	background-color: orange;
+	background-color: #BF496A;
 }
 
 
@@ -102,7 +102,7 @@ footer {
 #menu li a {
 	font-size: 120%;
 	font-weight: bold;
-	color: #fff;
+	color: #F0D399;
 	padding: 17px 25px 15px 25px;
 	display: block; 
 	text-decoration: none;	
