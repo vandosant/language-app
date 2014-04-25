@@ -1,5 +1,18 @@
 require 'spec_helper'
 
+feature 'information' do
+  scenario 'users can view details about the app' do
+    visit '/'
+
+    click_link 'about'
+
+    expect(page).to have_content "About language-app"
+    expect(page).to have_content "Created by: Scott Skender"
+    expect(page).to have_link "home"
+    expect(page).to have_link "login"
+  end
+end
+
 feature 'vocabulary' do
   scenario 'users can view vocab for a language' do
     visit '/'
