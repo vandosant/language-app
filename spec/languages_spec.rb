@@ -13,6 +13,20 @@ feature 'information' do
   end
 end
 
+feature 'user management' do
+  scenario 'users can register' do
+    visit '/'
+
+    click_link 'register'
+
+    fill_in 'email', with: 'test@example.com'
+    fill_in 'password', with: 'password'
+    click_button 'register'
+
+    expect(page).to have_content 'welcome, test@example.com'
+  end
+end
+
 feature 'vocabulary' do
   scenario 'users can view vocab for a language' do
     visit '/'

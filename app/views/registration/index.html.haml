@@ -1,0 +1,8 @@
+%div{:id => 'content_container'}
+  %form{:action => '/profile', :method => 'post'}
+    %input{:name => "authenticity_token", :value => "#{form_authenticity_token}", :type => "hidden"}
+    %label email
+    %input{:type => 'text', :name => 'email'}
+    %label password
+    %input{:type => 'password', :name => 'password'}
+    %button{:type => 'submit', :name => 'register'}register
