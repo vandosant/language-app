@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   get '/portuguese/vocabulary', to: 'portuguese#vocabulary'
 
-  get '/register', to: 'registration#index'
+  get '/register', to: 'users#register'
 
-  post '/profile', to: 'registration#new'
+  post '/profile', to: 'users#new'
 
   get '/profile/:id', to: 'languages#index'
+
+  get '/login', to: 'users#login'
 end

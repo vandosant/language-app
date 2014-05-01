@@ -13,8 +13,8 @@ feature 'information' do
   end
 end
 
-feature 'user management' do
-  scenario 'users can register' do
+feature 'users management' do
+  scenario 'users can register, logout, and login' do
     visit '/'
 
     click_link 'register'
@@ -24,14 +24,41 @@ feature 'user management' do
     click_button 'register'
 
     expect(page).to have_content 'welcome, test@example.com'
+
+    click_link 'logout'
+
+    expect(page).to have_no_content 'welcome, test@example.com'
+
+    click_link 'login'
+
+    fill_in 'email', with: 'test@example.com'
+    fill_in 'password', with: 'password'
+    click_button 'login'
+
+    expect(page).to have_content 'welcome, test@example.com'
   end
 end
 
 feature 'vocabulary' do
+  before do
+    visit '/'
+
+    click_link 'register'
+
+    fill_in 'email', with: 'alltest@example.com'
+    fill_in 'password', with: 'password'
+    click_button 'register'
+    click_link 'logout'
+  end
+
   scenario 'users can view vocab for a language' do
     visit '/'
 
     click_link 'login'
+
+    fill_in 'email', with: 'alltest@example.com'
+    fill_in 'password', with: 'password'
+    click_button 'login'
 
     click_link 'portuguese'
 

@@ -1,5 +1,5 @@
-class RegistrationController < ApplicationController
-  def index
+class UsersController < ApplicationController
+  def register
   end
 
   def new
@@ -7,5 +7,8 @@ class RegistrationController < ApplicationController
     user.save
 
     redirect_to "/profile/#{user.id}"
+  end
+
+  def login
   end
 end
