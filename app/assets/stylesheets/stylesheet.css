@@ -126,5 +126,23 @@ footer {
 	border-right: 1px solid #000;
 }
 
+/* ----- =content ----- */
 
+.flashcard {
+    background-color: #BF496A;
+    border-radius: 30px;
+    box-sizing: border-box;
+    width: 200px;
+    height: 380px;
+    margin-top: 2em;
+}
 
+.word {
+    padding-top: 60%;
+    padding-bottom: 60%;
+    box-sizing: border-box;
+    width: 200px;
+    font-size: 4em;
+    text-align: center;
+    color: #F0D399;
+}
