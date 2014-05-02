@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'languages#index'
 
   get '/login', to: 'users#login'
+
+  get '/logout', to: 'users#logout'
 end

@@ -28,6 +28,7 @@ feature 'users management' do
     click_link 'logout'
 
     expect(page).to have_no_content 'welcome, test@example.com'
+    expect(page).to have_content 'you have successfully logged out'
 
     click_link 'login'
 

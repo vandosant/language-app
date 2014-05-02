@@ -14,4 +14,9 @@ class UsersController < ApplicationController
 
   def login
   end
+
+  def logout
+    session.clear
+    redirect_to '/', :notice => 'you have successfully logged out'
+  end
 end
