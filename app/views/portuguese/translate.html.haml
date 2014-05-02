@@ -1,0 +1,17 @@
+%nav
+  %div{:id => 'nav_container'}
+    %a{:href => '/portuguese'}portuguese
+    %a{:href => '/'}home
+
+%div{:id => 'content_container'}
+  =form_tag('/portuguese/translate', :method => 'post') do
+    =text_field_tag(:english, @english_word)
+    =submit_tag('translate to portuguese')
+
+  %ul
+    -@data['tuc'].each do |thing|
+      -if thing['phrase']
+        %li
+          =thing['phrase']['text']
+
+%div{:class => 'resetColumnSet'}
