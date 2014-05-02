@@ -14,7 +14,7 @@ feature 'information' do
 end
 
 feature 'users management' do
-  scenario 'users can register, logout, and login' do
+  before 'users successfully register and logout' do
     visit '/'
 
     click_link 'register'
@@ -29,6 +29,10 @@ feature 'users management' do
 
     expect(page).to have_no_content 'welcome, test@example.com'
     expect(page).to have_content 'you have successfully logged out'
+  end
+
+  scenario 'users can login' do
+    visit '/'
 
     click_link 'login'
 
@@ -37,18 +41,43 @@ feature 'users management' do
     click_button 'login'
 
     expect(page).to have_content 'welcome, test@example.com'
+    expect(page).to have_content 'you have successfully logged in'
   end
 
   scenario 'users see their profile page on login' do
     visit '/'
 
-    click_link 'register'
+    click_link 'login'
 
     fill_in 'email', with: 'test@example.com'
     fill_in 'password', with: 'password'
-    click_button 'register'
+    click_button 'login'
 
     expect(page).to have_content 'welcome, test@example.com'
     expect(page).to have_content 'Profile'
+  end
+
+  scenario 'users cannot login with mismatched password' do
+    visit '/'
+
+    click_link 'login'
+
+    fill_in 'email', with: 'test@example.com'
+    fill_in 'password', with: 'aaawerawa'
+    click_button 'login'
+
+    expect(page).to have_content 'error'
+  end
+
+  scenario 'users cannot login with mismatched email' do
+    visit '/'
+
+    click_link 'login'
+
+    fill_in 'email', with: 'laskfjekfjz@example.com'
+    fill_in 'password', with: 'password'
+    click_button 'login'
+
+    expect(page).to have_content 'error'
   end
 end

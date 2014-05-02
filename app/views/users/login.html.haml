@@ -1,5 +1,7 @@
 %div{:id => 'content_container'}
-  %form{:action => '/profile', :method => 'post'}
+  =alert
+
+  %form{:action => '/login', :method => 'post'}
     %input{:name => "authenticity_token", :value => "#{form_authenticity_token}", :type => "hidden"}
     %label email
     %input{:type => 'text', :name => 'email'}
