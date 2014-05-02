@@ -1,5 +1,6 @@
 language-app
 ============
++ Learn a new language with the help of this application. You can (eventually) choose from vocabulary, flashcards, and translation features to help you make progress.
 
 Development
 ===========
