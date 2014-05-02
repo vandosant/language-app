@@ -4,9 +4,12 @@ class UsersController < ApplicationController
 
   def new
     user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password])
-    user.save
-
-    redirect_to "/profile/#{user.id}"
+    if user.save
+      session[:id] = user.id
+      redirect_to "/profile/#{user.id}"
+    else
+      render :new
+    end
   end
 
   def login

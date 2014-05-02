@@ -1,5 +1,9 @@
 class LanguagesController < ApplicationController
   def index
-    @user = User.find(params[:id]) if params[:id]
+    if session[:id]
+      @user = User.find(session[:id])
+    else
+      redirect_to '/'
+    end
   end
 end

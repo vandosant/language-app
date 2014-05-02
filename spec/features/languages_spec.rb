@@ -37,4 +37,17 @@ feature 'users management' do
 
     expect(page).to have_content 'welcome, test@example.com'
   end
+
+  scenario 'users see their profile page on login' do
+    visit '/'
+
+    click_link 'register'
+
+    fill_in 'email', with: 'test@example.com'
+    fill_in 'password', with: 'password'
+    click_button 'register'
+
+    expect(page).to have_content 'welcome, test@example.com'
+    expect(page).to have_content 'Profile'
+  end
 end
