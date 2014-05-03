@@ -1,14 +1,18 @@
 class UsersController < ApplicationController
   def register
+    @user = User.new
   end
 
-  def new
-    user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password])
+  def create
+    user = User.new
+    user.email = params[:user][:email]
+    user.password = params[:user][:password]
     if user.save
       log_in(user)
-      redirect_to "/profile/#{user.id}"
+      redirect_to "/profile/#{user.id}", :notice => "welcome, #{user.email}"
     else
-      render :new
+      @user = user
+      render :register
     end
   end
 
@@ -17,11 +21,10 @@ class UsersController < ApplicationController
 
   def signin
     user = User.find_by_email(params[:email])
-    if user.try(:authenticate, params[:password])
+    if user.authenticate(params[:password])
       log_in(user)
       redirect_to "/profile/#{user.id}", :notice => 'you have successfully logged in'
     else
-      flash[:alert] = 'error: invalid password'
       render :login
     end
   end

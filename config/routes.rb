@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#register'
 
-  post '/profile', to: 'users#new'
+  post '/register', to: 'users#create'
 
   get '/profile/:id', to: 'languages#index'
 
