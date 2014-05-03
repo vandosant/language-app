@@ -12,5 +12,5 @@ Development
 
 URLS
 ====
-Staging: http://stormy-escarpment-1024.herokuapp.com/
+Staging: http://stormy-escarpment-1024.herokuapp.com
 Tracker: https://www.pivotaltracker.com/n/projects/1072658
