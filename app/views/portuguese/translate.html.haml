@@ -9,9 +9,14 @@
     =submit_tag('translate to portuguese')
 
   %ul
-    -@data['tuc'].each do |thing|
-      -if thing['phrase']
-        %li
-          =thing['phrase']['text']
+    -if @data
+      -@data['tuc'].each do |thing|
+        -if thing['phrase']
+          %li
+            =thing['phrase']['text']
+          -@results = true
+    -unless @results
+      %li
+        Sorry, no results.
 
 %div{:class => 'resetColumnSet'}

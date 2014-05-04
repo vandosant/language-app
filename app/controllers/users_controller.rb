@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     user = User.find_by_email(params[:email])
     if user.authenticate(params[:password])
       log_in(user)
-      redirect_to "/profile/#{user.id}", :notice => 'you have successfully logged in'
+      redirect_to "/profile/#{user.id}", :notice => "welcome, #{user.email}\nyou have successfully logged in"
     else
       render :login
     end
