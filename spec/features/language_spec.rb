@@ -57,4 +57,28 @@ feature 'user authentication' do
     expect(page).to have_content 'invalid email address'
     expect(page).to have_content 'password is too short'
   end
+
+  scenario 'users cannot login without registering first' do
+    visit '/'
+
+    click_link 'login'
+
+    fill_in 'email', with: "#{rand(1000)}@example.com"
+    fill_in 'password', with: 'password'
+    click_button 'login'
+
+    expect(page).to have_content 'invalid email or password'
+  end
+
+  scenario 'users cannot login with an invalid password' do
+    visit '/'
+
+    click_link 'login'
+
+    fill_in 'email', with: 'test@example.com'
+    fill_in 'password', with: '38472983472'
+    click_button 'login'
+
+    expect(page).to have_content 'invalid email or password'
+  end
 end

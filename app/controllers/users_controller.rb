@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     user.password = params[:user][:password]
     if user.save
       log_in(user)
-      redirect_to "/profile/#{user.id}", :notice => "welcome, #{user.email}"
+      redirect_to "/profile/#{user.id}", :notice => ["welcome, #{user.email}"]
     else
       @user = user
       render :register
@@ -17,14 +17,17 @@ class UsersController < ApplicationController
   end
 
   def login
+    @user = User.new
   end
 
   def signin
-    user = User.find_by_email(params[:email])
-    if user.authenticate(params[:password])
+    user = User.find_by_email(params[:user][:email])
+    if user && user.authenticate(params[:user][:password])
       log_in(user)
-      redirect_to "/profile/#{user.id}", :notice => "welcome, #{user.email}\nyou have successfully logged in"
+      redirect_to "/profile/#{user.id}", :notice => ["welcome, #{user.email}", 'you have successfully logged in']
     else
+      @user = User.new
+      flash[:notice] = 'invalid email or password'
       render :login
     end
   end

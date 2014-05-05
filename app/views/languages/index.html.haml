@@ -6,4 +6,5 @@
 
 %div{:id => 'content_container'}
   %h2 Profile
-  =notice
+  -notice.each do |notice|
+    =notice
