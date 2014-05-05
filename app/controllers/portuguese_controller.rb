@@ -11,6 +11,9 @@ class PortugueseController < ApplicationController
     if params[:english]
       @english_word = params[:english]
       @data = Glosbe.translate("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=#{@english_word.gsub(/\s/, '_')}")
+      @results = false
+    else
+      @results = true
     end
   end
 end
