@@ -33,6 +33,8 @@ feature 'vocabulary' do
 
     click_link 'translate'
 
+    expect(page).to have_no_content 'Sorry, no results.'
+
     fill_in 'english', with: 'how are you'
     click_button 'translate to portuguese'
 
