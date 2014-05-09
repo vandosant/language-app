@@ -1,0 +1,25 @@
+.form-container {
+  // this will only fill the width of the fields / labels
+  // display: inline-block;
+
+  margin-top: 1em;
+  padding: 1em;
+  background: #B39C82;
+
+  .errors {
+  }
+
+  .field-container {
+    padding-bottom: 1em;
+    label {
+      display: inline-block;
+      width: 80px;
+    }
+  }
+
+  .form-actions {
+    input[type=submit] {
+      margin-left: 84px;
+    }
+  }
+}

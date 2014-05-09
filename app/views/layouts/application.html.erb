@@ -11,7 +11,9 @@
 <header>
   <div id="header_container">
     <div id="header_logo">
-      <%= image_tag 'langua.png', {:height => 100, :width => 300, :alt => 'Logo'} %>
+      <%= link_to root_path do %>
+        <%= image_tag 'langua.png', {:height => 100, :width => 300, :alt => 'Logo'} %>
+      <% end %>
     </div><!--end header_logo-->
   </div><!--end header-->
 </header>

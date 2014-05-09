@@ -19,9 +19,9 @@ feature 'user authentication' do
 
     click_link 'register'
 
-    fill_in 'email', with: 'test@example.com'
-    fill_in 'password', with: 'password'
-    click_button 'register'
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Register'
 
     expect(page).to have_content 'welcome, test@example.com'
 
@@ -36,9 +36,9 @@ feature 'user authentication' do
 
     click_link 'login'
 
-    fill_in 'email', with: 'test@example.com'
-    fill_in 'password', with: 'password'
-    click_button 'login'
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
 
     expect(page).to have_content 'welcome, test@example.com'
     expect(page).to have_content 'you have successfully logged in'
@@ -50,9 +50,9 @@ feature 'user authentication' do
 
     click_link 'register'
 
-    fill_in 'email', with: 'invalid.example,com'
-    fill_in 'password', with: '123'
-    click_button 'register'
+    fill_in 'Email', with: 'invalid.example,com'
+    fill_in 'Password', with: '123'
+    click_button 'Register'
 
     expect(page).to have_content 'invalid email address'
     expect(page).to have_content 'password is too short'
@@ -63,9 +63,9 @@ feature 'user authentication' do
 
     click_link 'login'
 
-    fill_in 'email', with: "#{rand(1000)}@example.com"
-    fill_in 'password', with: 'password'
-    click_button 'login'
+    fill_in 'Email', with: "#{rand(1000)}@example.com"
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
 
     expect(page).to have_content 'invalid email or password'
   end
@@ -75,9 +75,9 @@ feature 'user authentication' do
 
     click_link 'login'
 
-    fill_in 'email', with: 'test@example.com'
-    fill_in 'password', with: '38472983472'
-    click_button 'login'
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: '38472983472'
+    click_button 'Login'
 
     expect(page).to have_content 'invalid email or password'
   end

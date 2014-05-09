@@ -1,12 +1,20 @@
-%div{:id => 'content_container'}
+#content_container
+  .form-container
+    = form_for @user, :url => {:action => "create"} do |f|
 
-  =form_for @user, :url => {:action => "create"} do |f|
-    -if @user.errors.any?
-      -@user.errors.each do |_, error|
-        %p
-          =error
-    =f.label :email
-    =f.text_field :email, :id => 'email'
-    =f.label :password
-    =f.password_field :password, :id => 'password'
-    =f.submit :id => 'register'
+      .errors
+        -if @user.errors.any?
+          -@user.errors.each do |_, error|
+            %p
+              =error
+
+      .field-container
+        =f.label :email
+        =f.text_field :email
+
+      .field-container
+        =f.label :password
+        =f.password_field :password
+
+      .form-actions
+        =f.submit "Register"
