@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/vandosant/language-app.png)](https://codeclimate.com/github/vandosant/language-app)
+[![Build Status](https://travis-ci.org/vandosant/language-app.svg?branch=master)](https://travis-ci.org/vandosant/language-app)
+
 language-app
 ============
 + Learn Portuguese! You can (eventually) learn with vocabulary, flashcards, and translation features.
