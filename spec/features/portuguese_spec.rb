@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'vcr'
 
 feature 'vocabulary' do
-  scenario 'users can view vocab' do
+  scenario 'users can view vocab', js: true do
     visit '/'
 
     click_link 'portuguese'
@@ -11,6 +11,11 @@ feature 'vocabulary' do
 
     expect(page).to have_content "hello"
     expect(page).to have_content "alo"
+
+    find("#next_button").click
+
+    expect(page).to have_content "cat"
+    expect(page).to have_content "gato"
   end
 
   scenario 'users can translate individual words' do
