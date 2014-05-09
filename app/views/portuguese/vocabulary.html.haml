@@ -1,15 +1,24 @@
 %nav
-  %div{:id => 'nav_container'}
+  #nav_container
     %a{:href => '/portuguese'}portuguese
     %a{:href => '/'}home
 
-%div{:id => 'content_container'}
-  %div{:class => 'one_half'}
-    %div{:class => 'flashcard'}
-      %div{:class => 'word'}
+#content_container
+  .one_half
+    .flashcard
+      %div{:class => 'word', data: {container: "english-word"}}
         hello
-  %div{:class => 'one_half'}
-    %div{:class => 'flashcard'}
-      %div{:class => 'word'}
+
+  .one_half
+    .flashcard
+      %div{:class => 'word', data: {container: "portuguese-word"}}
         alo
-  %div{:class => 'resetColumnSet'}
+
+  .resetColumnSet
+
+  .full_column
+    %button#next_button{data: {behavior: "next-word"}}
+      Next &rarr;
+
+:javascript
+  window.words = #{JSON.generate(@words)};
