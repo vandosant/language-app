@@ -128,20 +128,21 @@ footer {
 /* ----- =content ----- */
 
 .flashcard {
+    margin-top: 4em;
+    padding: 1em;
     background-color: #BF496A;
-    border-radius: 30px;
-    box-sizing: border-box;
-    width: 200px;
-    height: 380px;
-    margin-top: 2em;
 }
 
 .word {
-    padding-top: 60%;
-    padding-bottom: 60%;
-    box-sizing: border-box;
-    width: 200px;
-    font-size: 4em;
     text-align: center;
+    font-size: 4em;
     color: #F0D399;
+    padding: .5em;
+}
+
+#next_button {
+    font-size: 110%;
+    background: white;
+    padding: 1em 3em;
+    border: .5em solid #B8C99D;
 }
