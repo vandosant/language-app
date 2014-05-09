@@ -1,6 +1,6 @@
 require 'open-uri'
 
-class Glosbe
+class GlosbeApi
   def self.translate(api_url)
     response = open(api_url).read
     JSON.parse(response)

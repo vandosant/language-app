@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'vcr'
 
 feature 'vocabulary' do
   scenario 'users can view vocab' do
@@ -13,32 +14,37 @@ feature 'vocabulary' do
   end
 
   scenario 'users can translate individual words' do
-    visit '/'
+    VCR.use_cassette('/portuguese/translate/hello') do
+      visit '/'
 
-    click_link 'portuguese'
+      click_link 'portuguese'
 
-    click_link 'translate'
+      click_link 'translate'
 
-    fill_in 'english', with: 'hello'
-    click_button 'translate to portuguese'
+      fill_in 'english', with: 'hello'
+      click_button 'translate to portuguese'
 
-    page.should have_css("input[value='hello']")
-    expect(page).to have_content 'oi'
+      page.should have_css("input[value='hello']")
+      expect(page).to have_content 'oi'
+    end
   end
 
   scenario 'users get an error if translation is not found' do
-    visit '/'
+    VCR.use_cassette('/portuguese/translate/how_are_you') do
 
-    click_link 'portuguese'
+      visit '/'
 
-    click_link 'translate'
+      click_link 'portuguese'
 
-    expect(page).to have_no_content 'Sorry, no results.'
+      click_link 'translate'
 
-    fill_in 'english', with: 'how are you'
-    click_button 'translate to portuguese'
+      expect(page).to have_no_content 'Sorry, no results.'
 
-    page.should have_css("input[value='how are you']")
-    expect(page).to have_content 'Sorry, no results.'
+      fill_in 'english', with: 'how are you'
+      click_button 'translate to portuguese'
+
+      page.should have_css("input[value='how are you']")
+      expect(page).to have_content 'Sorry, no results.'
+    end
   end
 end

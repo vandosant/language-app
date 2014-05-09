@@ -25,11 +25,15 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'haml', '~> 4.0.5'
 
-gem 'rails_12factor', '~> 0.0.2'
-
 gem 'bcrypt', '~> 3.1.7'
+
+group :production do
+  gem 'rails_12factor', '~> 0.0.2'
+end
 
 group :test do
   gem 'rspec-rails', '2.14.2'
   gem 'capybara', '2.2.1'
+  gem 'vcr', '~> 2.9.0'
+  gem 'webmock', '~> 1.17.4'
 end
