@@ -32,7 +32,27 @@ header {
 
 nav {
 	background-color: #BF496A;
-	overflow: hidden; 
+    color: #595151;
+	overflow: hidden;
+    padding: 1em;
+}
+
+nav a {
+    color: #595151;
+    text-decoration: none;
+    padding: 1em;
+}
+
+nav a:hover {
+    outline-color: black;
+    color: black;
+}
+
+a {
+    color: #595151;
+}
+a:hover {
+    color: black;
 }
 
 #content {
