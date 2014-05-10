@@ -1,8 +1,7 @@
 %nav
   %div{:id => 'nav_container'}
-    %a{:href => '/'}home
-    %a{:href => '/profile'}languages
     %a{:href => '/portuguese'}portuguese
+    %a{:href => '/'}home
 
 %div{:id => 'content_container'}
   .form-container
@@ -13,11 +12,10 @@
 
     %ul
       -if @data
-        -@data['tuc'].each do |thing|
-          -if thing['phrase']
-            %li
-              =thing['phrase']['text']
-            -@results = true
+        -@data.each do |thing|
+          %li
+            =thing
+          -@results = true
       -unless @results
         %li
           Sorry, no results.
