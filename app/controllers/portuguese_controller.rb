@@ -5,7 +5,7 @@ class PortugueseController < ApplicationController
   end
 
   def vocabulary
-    @words = [ ["cat", "gato"], ["dog", "perro"], ["cow", "vaca"], ["duck", "pato"] ]
+    @words = [ ["goodbye", "adeus"], ["please", "por favor"], ["thank you", "obrigado"], ["you're welcome", "de nada"] ]
   end
 
   def translate

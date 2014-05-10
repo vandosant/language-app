@@ -10,12 +10,12 @@ feature 'vocabulary' do
     click_link 'vocabulary'
 
     expect(page).to have_content "hello"
-    expect(page).to have_content "alo"
+    expect(page).to have_content "olá"
 
     find("#next_button").click
 
-    expect(page).to have_content "cat"
-    expect(page).to have_content "gato"
+    expect(page).to have_content "goodbye"
+    expect(page).to have_content "adeus"
   end
 
   scenario 'users can translate individual words' do
