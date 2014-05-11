@@ -148,16 +148,19 @@ footer {
 /* ----- =content ----- */
 
 .flashcard {
+    display: table;
     margin-top: 4em;
-    padding: 1em;
+    width: 100%;
     background-color: #BF496A;
 }
 
 .word {
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
+    padding: .5em;
     font-size: 4em;
     color: #F0D399;
-    padding: .5em;
 }
 
 #next_button {
@@ -165,4 +168,5 @@ footer {
     background: white;
     padding: 1em 3em;
     border: .5em solid #B8C99D;
+    outline-color: #BF496A;
 }
