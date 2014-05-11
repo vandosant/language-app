@@ -11,12 +11,26 @@
         =submit_tag('translate to portuguese')
 
     %ul
-      -if @data
-        -@data.each do |thing|
+      -if @matched_data
+        - @matched_data.each do |words|
           %li
-            =thing
-          -@results = true
-      -unless @results
+            -if words.is_a?(Hash)
+              = words.keys[0].to_s
+              - @results = true
+              %br
+              %br
+              - count = 0
+              - words.values[0].each do |example|
+                - break if count > 2
+                = example[:portuguese]
+                %br
+                = example[:english]
+                %br
+                %br
+                - count += 1
+            - else
+              = words
+      - unless @results
         %li
           Sorry, no results.
 

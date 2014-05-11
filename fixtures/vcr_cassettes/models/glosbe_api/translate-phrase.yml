@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 10 May 2014 22:51:12 GMT
+      - Sat, 10 May 2014 22:06:03 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -29,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       Expires:
-      - Sat, 10 May 2014 22:51:11 GMT
+      - Sat, 10 May 2014 22:06:02 GMT
       Cache-Control:
       - no-cache
     body:
@@ -103,79 +103,5 @@ http_interactions:
         OiJFc3RvdT8tIE9sw6EsIMOpIGEgTWFsaW4gb3V0cmEgdmV6IiwiZmlyc3Qi
         OiJIZWxsbywgaXQnIHMgTWFsaW4ifV0sImZvdW5kIjo2NTEzfQ==
     http_version: 
-  recorded_at: Sat, 10 May 2014 22:51:15 GMT
-- request:
-    method: get
-    uri: http://glosbe.com/gapi/translate?dest=por&format=json&from=eng&phrase=how_are_you
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sun, 11 May 2014 00:28:54 GMT
-      Content-Type:
-      - application/json;charset=UTF-8
-      Content-Length:
-      - '86'
-      Connection:
-      - keep-alive
-      Expires:
-      - Sun, 11 May 2014 00:28:53 GMT
-      Cache-Control:
-      - no-cache
-    body:
-      encoding: UTF-8
-      string: '{"result":"ok","authors":{},"dest":"por","phrase":"how_are_you","tuc":[],"from":"eng"}'
-    http_version: 
-  recorded_at: Sun, 11 May 2014 00:28:56 GMT
-- request:
-    method: get
-    uri: http://glosbe.com/gapi/tm?dest=por&format=json&from=eng&phrase=how_are_you
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Sun, 11 May 2014 00:28:54 GMT
-      Content-Type:
-      - application/json;charset=UTF-8
-      Content-Length:
-      - '62'
-      Connection:
-      - keep-alive
-      Expires:
-      - Sun, 11 May 2014 00:28:53 GMT
-      Cache-Control:
-      - no-cache
-    body:
-      encoding: UTF-8
-      string: '{"result":"ok","page":1,"pageSize":30,"examples":[],"found":0}'
-    http_version: 
-  recorded_at: Sun, 11 May 2014 00:28:56 GMT
+  recorded_at: Sat, 10 May 2014 22:06:05 GMT
 recorded_with: VCR 2.9.0

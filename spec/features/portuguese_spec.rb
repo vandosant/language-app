@@ -31,6 +31,8 @@ feature 'vocabulary' do
 
       page.should have_css("input[value='hello']")
       expect(page).to have_content 'oi'
+      expect(page).to have_content 'olá'
+      expect(page).to have_content 'Oh, olá outra vez'
     end
   end
 
