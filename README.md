@@ -8,6 +8,7 @@ language-app
 Development
 ===========
 1. Fork and clone this repo
+1. Install gems using <code>bundle install</code>
 1. Create your local databases: <code>rake db:create</code>
 1. Migrate databases to the latest: <code> rake db:migrate</code>
 1. Run this rails application on your local environment with: <code>rails server</code>
