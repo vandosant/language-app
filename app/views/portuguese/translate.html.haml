@@ -10,28 +10,33 @@
         =text_field_tag(:english, @english_word)
         =submit_tag('translate to portuguese')
 
-    %ul
-      -if @matched_data
+    -if @matched_data
+      .results-container
         - @matched_data.each do |words|
+          .result-output
+            %li
+              -if words.is_a?(Hash)
+                %hr
+                = words.keys[0].to_s
+                - @results = true
+                %br
+                %br
+                - count = 0
+                - words.values[0].each do |example|
+                  - break if count > 2
+                  %li= example[:portuguese]
+                  %br
+                  %li= example[:english]
+                  %br
+                  %br
+                  - count += 1
+              - else
+                %hr
+                = words
+    - unless @results
+      .results-container
+        .result-output
           %li
-            -if words.is_a?(Hash)
-              = words.keys[0].to_s
-              - @results = true
-              %br
-              %br
-              - count = 0
-              - words.values[0].each do |example|
-                - break if count > 2
-                = example[:portuguese]
-                %br
-                = example[:english]
-                %br
-                %br
-                - count += 1
-            - else
-              = words
-      - unless @results
-        %li
-          Sorry, no results.
+            Sorry, no results.
 
 %div{:class => 'resetColumnSet'}
