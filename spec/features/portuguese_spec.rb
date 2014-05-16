@@ -16,6 +16,16 @@ feature 'vocabulary' do
 
     expect(page).to have_content "goodbye"
     expect(page).to have_content "adeus"
+
+    find("#last_button").click
+
+    expect(page).to have_content "hello"
+    expect(page).to have_content "olá"
+
+    find("#last_button").click
+
+    expect(page).to have_content "you're welcome"
+    expect(page).to have_content "de nada"
   end
 
   scenario 'users can translate individual words' do

@@ -164,9 +164,17 @@ footer {
 }
 
 #next_button {
-    font-size: 110%;
-    background: white;
-    padding: 1em 3em;
-    border: .5em solid #B8C99D;
-    outline-color: #BF496A;
-}
+     font-size: 110%;
+     background: white;
+     padding: 1em 3em;
+     border: .5em solid #B8C99D;
+     outline-color: #BF496A;
+ }
+
+#last_button {
+     font-size: 110%;
+     background: white;
+     padding: 1em 3em;
+     border: .5em solid #B8C99D;
+     outline-color: #BF496A;
+ }

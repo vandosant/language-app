@@ -8,18 +8,16 @@
   .one_half
     .flashcard
       %div{:class => 'word', data: {container: "english-word"}}
-        hello
 
   .one_half
     .flashcard
       %div{:class => 'word', data: {container: "portuguese-word"}}
-        olá
 
   .resetColumnSet
+    .one_half
+      %button#last_button{data: {behavior: "last-word"}}
+        &larr; Last
+    .one_half
+      %button#next_button{data: {behavior: "next-word"}}
+        Next &rarr;
 
-  .full_column
-    %button#next_button{data: {behavior: "next-word"}}
-      Next &rarr;
-
-:javascript
-  window.words = #{JSON.generate(@words)};

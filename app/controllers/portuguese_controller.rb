@@ -5,7 +5,13 @@ class PortugueseController < ApplicationController
   end
 
   def vocabulary
-    @words = [ ["goodbye", "adeus"], ["please", "por favor"], ["thank you", "obrigado"], ["you're welcome", "de nada"], ["hello", "olá"] ]
+    @words = [
+      ["hello", "olá"],
+      ["goodbye", "adeus"],
+      ["please", "por favor"],
+      ["thank you", "obrigado"],
+      ["you're welcome", "de nada"]
+    ]
   end
 
   def translate
@@ -18,5 +24,16 @@ class PortugueseController < ApplicationController
     else
       @results = true
     end
+  end
+
+  def words
+    @words = [
+      ["hello", "olá"],
+      ["goodbye", "adeus"],
+      ["please", "por favor"],
+      ["thank you", "obrigado"],
+      ["you're welcome", "de nada"]
+    ]
+    render :json => @words
   end
 end
