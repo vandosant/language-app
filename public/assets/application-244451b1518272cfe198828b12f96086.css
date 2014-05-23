@@ -275,7 +275,7 @@ footer {
 
 
  */
-@import url(normalize.css);
+@import url(_normalize.scss);
 /* line 17, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/application.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
