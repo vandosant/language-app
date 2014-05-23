@@ -17,6 +17,6 @@ module LanguageApp
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib)
     config.assets.enabled = true
-    config.assets.precompile += %w( *.css *.js )
+    config.assets.precompile += %w( *.css *.js *.scss )
   end
 end

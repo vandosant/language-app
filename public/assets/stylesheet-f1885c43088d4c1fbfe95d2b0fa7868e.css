@@ -1,0 +1,201 @@
+/*
+	STYLE.CSS:
+	One stylesheet to rule them all.
+	
+	selector { property:value }
+
+*/
+/* ----- =structure ----- */
+/* line 12, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+html {
+  height: 100%;
+}
+
+/* line 16, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+body {
+  background-color: #F0D399;
+  height: 100%;
+}
+
+/* line 25, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+#header_container,
+#nav_container,
+#content_container,
+#footer_container,
+.container {
+  margin: auto;
+  max-width: 980px;
+}
+
+/* line 30, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+#body_container {
+  min-height: 100%;
+  position: relative;
+}
+
+/* line 35, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+header {
+  background-color: #B8C99D;
+}
+
+/* line 39, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+nav {
+  background-color: #BF496A;
+  color: #595151;
+  padding: .5em 0;
+}
+/* line 43, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 46, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+/* line 49, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+nav ul li a {
+  color: #595151;
+  text-decoration: none;
+  padding-right: 2em;
+}
+/* line 54, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+nav ul li a:hover {
+  color: black;
+}
+
+/* line 61, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+a {
+  color: #595151;
+}
+
+/* line 65, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+a:hover {
+  color: black;
+}
+
+/* line 69, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+#content {
+  background-color: #F0D399;
+}
+
+/* line 74, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+main .container {
+  padding-bottom: 4em;
+}
+/* line 76, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+main .container nav {
+  background-color: #F0D399;
+  float: right;
+  overflow: hidden;
+}
+/* line 80, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+main .container nav ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 83, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+main .container nav ul li {
+  float: left;
+  list-style-type: none;
+  display: block;
+}
+/* line 88, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+main .container nav ul a {
+  padding: .3em 0;
+  margin-bottom: 1em;
+  font-weight: 900;
+}
+
+/* line 98, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+footer {
+  background-color: #BF496A;
+  position: absolute;
+  height: 3em;
+  bottom: 0;
+  width: 100%;
+  padding: 0 .5em;
+}
+
+/* ----- =columns ----- */
+/* line 109, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.one_half {
+  width: 460px;
+}
+
+/* line 113, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.one_third {
+  width: 300px;
+}
+
+/* line 117, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.two_third {
+  width: 620px;
+}
+
+/* line 121, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.one_fourth {
+  width: 220px;
+}
+
+/* line 125, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.three_fourth {
+  width: 700px;
+}
+
+/* line 129, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.full_column {
+  width: 940px;
+}
+
+/* line 133, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.one_half, .one_third, .two_third, .three_fourth, .one_fourth, .full_column {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+/* line 141, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.resetColumnSet {
+  clear: both;
+}
+
+/* ----- =content ----- */
+/* line 147, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.flashcard {
+  display: table;
+  margin-top: 4em;
+  width: 100%;
+  background-color: #BF496A;
+}
+
+/* line 154, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+.word {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: .5em;
+  font-size: 4em;
+  color: #F0D399;
+}
+
+/* line 163, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+#next_button {
+  font-size: 110%;
+  background: white;
+  padding: 1em 3em;
+  border: .5em solid #B8C99D;
+  outline-color: #595151;
+}
+
+/* line 171, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/stylesheet.scss */
+#last_button {
+  font-size: 110%;
+  background: white;
+  padding: 1em 3em;
+  border: .5em solid #B8C99D;
+  outline-color: #595151;
+}

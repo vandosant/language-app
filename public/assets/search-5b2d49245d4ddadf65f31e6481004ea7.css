@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* line 1, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/search.scss */
+.results-container {
+  padding: 1em;
+  background: #B39C82;
+}
+/* line 8, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/search.scss */
+.results-container li {
+  list-style-type: none;
+}
+/* line 12, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/search.scss */
+.results-container hr {
+  border: none;
+  border-top: medium double #F0D399;
+  color: #F0D399;
+  text-align: center;
+}
+/* line 19, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/search.scss */
+.results-container hr:after {
+  content: "»";
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1em;
+  font-weight: 300;
+  padding: 0 0.25em;
+  background: #B39C82;
+}
+/* line 30, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/search.scss */
+.results-container .result-output {
+  color: #595151;
+}
+/* line 34, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/search.scss */
+.results-container .result-output li:first-child {
+  font-size: 1.5em;
+  font-style: bold;
+  color: #BF496A;
+}

@@ -1,0 +1,23 @@
+/* line 1, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/forms.scss */
+.form-container {
+  margin-top: 1em;
+  padding: 1em;
+  background: #B39C82;
+}
+/* line 12, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/forms.scss */
+.form-container .field-container {
+  padding-bottom: 1em;
+}
+/* line 14, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/forms.scss */
+.form-container .field-container input {
+  outline-color: #B8C99D;
+}
+/* line 17, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/forms.scss */
+.form-container .field-container label {
+  display: inline-block;
+  width: 80px;
+}
+/* line 24, /Users/sskender/gSchoolWork/language-app/app/assets/stylesheets/forms.scss */
+.form-container .form-actions input[type=submit] {
+  margin-left: 84px;
+}
