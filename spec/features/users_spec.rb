@@ -9,7 +9,7 @@ feature 'information' do
     expect(page).to have_content "About langua"
     expect(page).to have_content "Created by: Scott Skender"
     expect(page).to have_link "home"
-    expect(page).to have_link "languages"
+    expect(page).to have_link "portuguese"
   end
 end
 
