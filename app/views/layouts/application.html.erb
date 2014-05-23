@@ -16,9 +16,36 @@
       <% end %>
     </div><!--end header_logo-->
   </div><!--end header-->
+  <nav>
+    <div id="nav_container">
+      <ul>
+        <li>
+          <a href="/">home</a>
+        </li>
+        <li>
+          <a href="/about">about</a>
+        </li>
+        <li>
+          <a href="/portuguese">portuguese</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
-<%= yield %>
+<div id="body_container">
+  <main>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </main>
+
+  <footer>
+    <div id="footer_container">
+    </div>
+  </footer>
+
+</div>
 
 </body>
 </html>
