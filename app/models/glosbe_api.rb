@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class GlosbeApi
-  def self.translate_word(api_url)
+  def self.translate_word(api_url, english_word)
     response = open(api_url).read
     parsed_response = JSON.parse(response)
 
@@ -17,6 +17,11 @@ class GlosbeApi
       thing['phrase']['text']
     end
 
+    word = Word.create(:english => english_word)
+
+    result.each do |translation|
+      Translation.create(:portuguese => translation, :word_id => word.id)
+    end
     result
   end
 

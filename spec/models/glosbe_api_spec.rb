@@ -4,7 +4,7 @@ require 'vcr'
 describe GlosbeApi do
 
   let(:word_translation) do
-    GlosbeApi.translate_word("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=hello")
+    GlosbeApi.translate_word("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=hello", "hello")
   end
 
   it 'translates individual words' do

@@ -17,7 +17,7 @@ class PortugueseController < ApplicationController
   def translate
     if params[:english]
       @english_word = params[:english]
-      @word_data = GlosbeApi.translate_word("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=#{@english_word.gsub(/\s/, '_')}")
+      @word_data = GlosbeApi.translate_word("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=#{@english_word.gsub(/\s/, '_')}", @english_word)
       phrase_data = GlosbeApi.translate_phrase("http://glosbe.com/gapi/tm?from=eng&dest=por&format=json&phrase=#{@english_word.gsub(/\s/, '_')}")
       @matched_data = GlosbeApi.match_examples(@word_data, phrase_data)
       @results = false
