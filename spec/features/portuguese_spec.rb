@@ -5,7 +5,9 @@ feature 'vocabulary' do
   scenario 'users can view vocab', js: true do
     visit '/'
 
-    click_link 'portuguese'
+    within('nav') do
+      click_link 'portuguese'
+    end
 
     click_link 'vocabulary'
 
@@ -32,7 +34,9 @@ feature 'vocabulary' do
     VCR.use_cassette('/portuguese/translate/hello') do
       visit '/'
 
-      click_link 'portuguese'
+      within('nav') do
+        click_link 'portuguese'
+      end
 
       click_link 'translate'
 
@@ -51,7 +55,9 @@ feature 'vocabulary' do
 
       visit '/'
 
-      click_link 'portuguese'
+      within('nav') do
+        click_link 'portuguese'
+      end
 
       click_link 'translate'
 
