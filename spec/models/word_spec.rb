@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Word do
-  it 'saves individual words' do
+  it 'saves translations for words' do
     word = Word.create!(:english => 'hello')
     word_translation = Translation.create!(:portuguese => 'olá', :word_id => word.id)
 
