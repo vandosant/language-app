@@ -13,10 +13,18 @@
     padding-bottom: 1em;
     input {
       outline-color: #B8C99D;
+      height: 1.5em;
     }
     label {
       display: inline-block;
       width: 80px;
+    }
+    input[type=submit] {
+      box-sizing: border-box;
+      color: #595151;
+      height: 1.5em;
+      vertical-align: top;
+      border: none;
     }
   }
 

@@ -1,9 +1,9 @@
 %div{:id => 'content_container'}
   .form-container
-    =form_tag('/portuguese/translate', :method => 'post') do
+    = form_tag('/portuguese/translate', :method => 'post') do
       .field-container
-        =text_field_tag(:english, @english_word)
-        =submit_tag('translate to portuguese')
+        = text_field_tag(:english, @english_word)
+        = submit_tag('translate to portuguese')
 
     -if @matched_data
       .results-container
