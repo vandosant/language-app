@@ -1,3 +1,5 @@
+@import "mixins";
+
 .results-container {
   // this will only fill the width of the fields / labels
   // display: inline-block;
@@ -10,21 +12,7 @@
   }
 
   hr {
-    border: none;
-    border-top: medium double #F0D399;
-    color: #F0D399;
-    text-align: center;
-  }
-
-  hr:after {
-    content: "»";
-    display: inline-block;
-    position: relative;
-    top: -0.7em;
-    font-size: 1em;
-    font-weight: 300;
-    padding: 0 0.25em;
-    background: #B39C82;
+    @include horizontal_rule;
   }
 
   .result-output {
