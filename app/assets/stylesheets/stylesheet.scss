@@ -174,3 +174,12 @@ footer {
   border: .5em solid #B8C99D;
   outline-color: #595151;
 }
+
+/* ----- =animation ----- */
+
+.waterdog {
+  -webkit-animation: bounce 5s infinite;
+  -moz-animation:    bounce 5s infinite;
+  -o-animation:      bounce 5s infinite;
+  animation:         bounce 5s infinite;
+}
