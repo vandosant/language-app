@@ -15,6 +15,13 @@
         <%= image_tag 'langua.png', {:alt => 'Langua'} %>
       <% end %>
     </div><!--end header_logo-->
+    <% unless current_page?(root_path) %>
+      <div id="waterdog_container">
+        <div class="waterdog">
+          <%= image_tag 'waterdog-small.png' %>
+        </div>
+      </div>
+    <% end %>
   </div><!--end header-->
   <nav>
     <div id="nav_container">

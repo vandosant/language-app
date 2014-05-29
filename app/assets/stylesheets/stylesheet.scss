@@ -17,7 +17,6 @@ body {
   height: 100%;
 }
 
-#header_container,
 #nav_container,
 #content_container,
 #footer_container,
@@ -26,13 +25,15 @@ body {
   max-width: 980px;
 }
 
+#header_container {
+  max-width: 980px;
+  max-height: 100px;
+  margin: 0 auto;
+}
+
 #body_container {
   min-height: 100%;
   position: relative;
-}
-
-header {
-  background-color: #B8C99D;
 }
 
 nav {
@@ -101,6 +102,23 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 0 .5em;
+}
+
+/* ----- =header ----- */
+
+header {
+  background-color: #B8C99D;
+}
+
+#header_logo {
+  display:inline-block;
+  margin-right: 40%;
+}
+
+#waterdog_container {
+  display:inline-block;
+  height: 100px;
+  overflow:hidden;
 }
 
 /* ----- =columns ----- */
