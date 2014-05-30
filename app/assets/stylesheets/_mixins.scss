@@ -2,7 +2,6 @@
 // primary call button, login button, submit button, etc.
 
 @mixin horizontal_rule {
-  hr {
     border: none;
     border-top: medium double #F0D399;
     color: #F0D399;
@@ -16,7 +15,6 @@
       font-weight: 300;
       padding: 0 0.25em;
       background: #B39C82;
-    }
   }
 }
 
