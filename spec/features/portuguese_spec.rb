@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'vcr'
 
 feature 'vocabulary' do
-  scenario 'users can view vocab', js: true do
+  scenario 'users can view vocab in multiple categories', js: true do
     visit '/'
 
     within('nav') do
@@ -28,6 +28,14 @@ feature 'vocabulary' do
 
     expect(page).to have_content "you're welcome"
     expect(page).to have_content "de nada"
+
+    find("[data-id='numbers']").click
+
+    expect(page).to have_content "um"
+
+    find("#last_button").click
+
+    expect(page).to have_content "mil"
   end
 
   scenario 'users can translate individual words' do

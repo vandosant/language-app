@@ -2,7 +2,7 @@
   .full_column
     .categories
       - @categories.each do |category|
-        .word_category
+        %button.word_category{data: {behavior: "new-category", id: category}}
           = category
   .one_half
     .flashcard

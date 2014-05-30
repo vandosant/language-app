@@ -25,6 +25,14 @@ $(document).on("click", "[data-behavior=last-word]", function () {
   langua.showPair();
 });
 
+$(document).on("click", "[data-behavior=new-category]", function (event) {
+  var targetCategory = event.target.dataset.id;
+  var targetIndex = langua.categories.indexOf(targetCategory);
+  langua.wordKey = langua.categories[targetIndex];
+  langua.currentIndex = 0;
+  langua.showPair();
+});
+
 $(document).ready(function () {
   $.getJSON('/portuguese/words.json', {category:"All"}, function(data) {
     langua.categories = data.categories;
