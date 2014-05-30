@@ -1,4 +1,9 @@
 #content_container
+  .full_column
+    .categories
+      - @categories.each do |category|
+        .word_category
+          = category
   .one_half
     .flashcard
       %div{:class => 'word', data: {container: "english-word"}}
@@ -11,7 +16,7 @@
     .one_half
       %button#last_button{data: {behavior: "last-word"}}
         &larr; Last
-    .one_half
+    .one_half_right
       %button#next_button{data: {behavior: "next-word"}}
         Next &rarr;
 

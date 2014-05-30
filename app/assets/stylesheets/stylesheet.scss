@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 //$body_color: #F0D399;
 //$nav_color: #BF496A;
@@ -104,13 +105,13 @@ footer {
 header {
   background-color: $header_color;
   #header_logo {
-    display:inline-block;
+    display: inline-block;
     margin-right: 40%;
   }
   #waterdog_container {
-    display:inline-block;
+    display: inline-block;
     height: 100px;
-    overflow:hidden;
+    overflow: hidden;
   }
 }
 
@@ -118,6 +119,11 @@ header {
 
 .one_half {
   width: 460px;
+}
+
+.one_half_right {
+  @extend .one_half;
+  text-align: right;
 }
 
 .one_third {
@@ -156,7 +162,7 @@ header {
 
 .flashcard {
   display: table;
-  margin-top: 4em;
+  margin-top: 1em;
   width: 100%;
   background-color: $nav_color;
 }
@@ -186,11 +192,19 @@ header {
   outline-color: $text_color;
 }
 
+.categories {
+  margin-top: 2em;
+  text-align: center;
+  .word_category {
+    @include category;
+  }
+}
+
 /* ----- =animation ----- */
 
 .waterdog {
   -webkit-animation: bounce 5s infinite;
-  -moz-animation:    bounce 5s infinite;
-  -o-animation:      bounce 5s infinite;
-  animation:         bounce 5s infinite;
+  -moz-animation: bounce 5s infinite;
+  -o-animation: bounce 5s infinite;
+  animation: bounce 5s infinite;
 }

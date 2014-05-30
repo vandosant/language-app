@@ -5,13 +5,7 @@ class PortugueseController < ApplicationController
   end
 
   def vocabulary
-    @words = [
-      ["hello", "olá"],
-      ["goodbye", "adeus"],
-      ["please", "por favor"],
-      ["thank you", "obrigado"],
-      ["you're welcome", "de nada"]
-    ]
+    @categories = ['basics', 'numbers']
   end
 
   def translate
@@ -27,13 +21,46 @@ class PortugueseController < ApplicationController
   end
 
   def words
-    @words = [
-      ["hello", "olá"],
-      ["goodbye", "adeus"],
-      ["please", "por favor"],
-      ["thank you", "obrigado"],
-      ["you're welcome", "de nada"]
-    ]
+    @words = {
+      :categories => ['basics', 'numbers'],
+      :words => {
+        :basics => [
+          ["hello", "olá"],
+          ["goodbye", "adeus"],
+          ["good morning", "bom dia"],
+          ["good afternoon", "boa tarde"],
+          ["please", "faz favor"],
+          ["thank you", "obrigado"],
+          ["you're welcome", "de nada"]
+        ],
+        :numbers => [
+          [1, 'um'],
+          [2, 'dos'],
+          [3, 'tres'],
+          [4, 'quatro'],
+          [5, 'cinco'],
+          [6, 'seis'],
+          [7, 'sete'],
+          [8, 'oito'],
+          [9, 'nove'],
+          [10, 'dez'],
+          [11, 'onze'],
+          [12, 'doze'],
+          [13, 'treze'],
+          [14, 'catorze'],
+          [15, 'quinze'],
+          [16, 'dezasseis'],
+          [17, 'dezassete'],
+          [18, 'dezoito'],
+          [19, 'dezanove'],
+          [20, 'vinte'],
+          [30, 'trinta'],
+          [40, 'quarenta'],
+          [100, 'cem'],
+          [1000, 'mil']
+        ]
+      }
+    }
     render :json => @words
   end
 end

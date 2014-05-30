@@ -19,3 +19,11 @@
     }
   }
 }
+
+@mixin category {
+  background: $header_color;
+  color: $text_color;
+  text-align: center;
+  display: inline-block;
+  padding: .5em 2em;
+}
