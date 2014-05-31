@@ -2,7 +2,7 @@
   .form-container
     = notice
 
-    = form_for @user, :url => {:action => 'signin'} do |f|
+    = form_for @user, url: sessions_path do |f|
       - if @user.errors.any?
         .errors
           - @user.errors.full_messages.each do |error|

@@ -21,9 +21,9 @@ Rails.application.routes.draw do
 
   get '/profile/:id', to: 'languages#index'
 
-  get '/login', to: 'users#login'
+  resource :sessions
 
-  post '/login', to: 'users#signin'
+  get '/login', to: 'sessions#new', as: :login
 
-  get '/logout', to: 'users#logout'
+  get '/logout', to: 'sessions#destroy', as: :logout
 end
