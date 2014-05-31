@@ -33,7 +33,6 @@ feature 'user authentication' do
   end
 
   scenario 'users cannot register with invalid credentials' do
-    pending
     visit '/'
 
     click_link 'register'
@@ -47,7 +46,6 @@ feature 'user authentication' do
   end
 
   scenario 'users cannot login without registering first' do
-    pending
     visit '/'
 
     click_link 'login'
@@ -60,7 +58,6 @@ feature 'user authentication' do
   end
 
   scenario 'users cannot login with an invalid password' do
-    pending
     visit '/'
 
     click_link 'login'
