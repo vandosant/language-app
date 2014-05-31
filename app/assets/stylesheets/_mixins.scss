@@ -2,19 +2,19 @@
 // primary call button, login button, submit button, etc.
 
 @mixin horizontal_rule {
-    border: none;
-    border-top: medium double #F0D399;
-    color: #F0D399;
-    text-align: center;
-    &:after {
-      content: "»";
-      display: inline-block;
-      position: relative;
-      top: -0.7em;
-      font-size: 1em;
-      font-weight: 300;
-      padding: 0 0.25em;
-      background: #B39C82;
+  border: none;
+  border-top: medium double #F0D399;
+  color: #F0D399;
+  text-align: center;
+  &:after {
+    content: "»";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 0 0.25em;
+    background: #B39C82;
   }
 }
 

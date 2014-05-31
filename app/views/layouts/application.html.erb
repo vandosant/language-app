@@ -25,16 +25,15 @@
   </div><!--end header-->
   <nav>
     <div id="nav_container">
-      <ul>
-        <li>
-          <a href="/">home</a>
-        </li>
-        <li>
-          <a href="/about">about</a>
-        </li>
-        <li>
-          <a href="/portuguese">portuguese</a>
-        </li>
+      <ul id="navigation_links">
+        <li><a href="/">home</a></li>
+        <li><a href="/about">about</a></li>
+        <li><a href="/portuguese">portuguese</a></li>
+      </ul>
+      <ul id="authentication_links">
+        <li><%= link_to "register", register_path %></li>
+        <li><%= link_to "login", login_path %></li>
+        <li><%= link_to "logout", logout_path %></li>
       </ul>
     </div>
   </nav>

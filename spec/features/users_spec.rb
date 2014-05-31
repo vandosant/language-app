@@ -1,21 +1,7 @@
 require 'spec_helper'
 
-feature 'information' do
-  scenario 'users can view details about the app' do
-    visit '/'
-
-    click_link 'about'
-
-    expect(page).to have_content "About langua"
-    expect(page).to have_content "Created by: Scott Skender"
-    expect(page).to have_link "home"
-    expect(page).to have_link "portuguese"
-  end
-end
-
 feature 'user authentication' do
   before 'users can register and logout' do
-    pending
     visit '/'
 
     click_link 'register'
@@ -33,7 +19,6 @@ feature 'user authentication' do
   end
 
   scenario 'users can login' do
-    pending
     visit '/'
 
     click_link 'login'
