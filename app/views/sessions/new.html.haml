@@ -1,6 +1,9 @@
 #content_container
   .form-container
-    = notice
+    - if alert
+      .alert
+        - alert.each do |message|
+          %li= message
 
     = form_for @user, url: sessions_path do |f|
       - if @user.errors.any?

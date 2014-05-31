@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to "/profile/#{user.id}", :notice => ["welcome, #{user.email}", 'you have successfully logged in']
     else
       @user = User.new
-      flash[:notice] = ['invalid email or password']
+      flash[:alert] = ['invalid email or password']
       render :new
     end
   end

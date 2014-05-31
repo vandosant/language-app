@@ -192,6 +192,11 @@ header {
   }
 }
 
+.alert {
+  @extend .notice;
+  color: $error_color;
+}
+
 /* ----- =animation ----- */
 
 .waterdog_static {

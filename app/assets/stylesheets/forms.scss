@@ -1,3 +1,5 @@
+@import "variables";
+
 .form-container {
   // this will only fill the width of the fields / labels
   // display: inline-block;
@@ -7,6 +9,7 @@
   background: #B39C82;
 
   .errors {
+    color: $error_color;
   }
 
   .field-container {
