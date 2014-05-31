@@ -1,4 +1,6 @@
 %div{:id => 'content_container'}
   %h2 Profile
-  -notice.each do |notice|
-    =notice
+  - if notice
+    .notice
+      - notice.each do |message|
+        %li= message

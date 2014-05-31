@@ -185,6 +185,13 @@ header {
   }
 }
 
+.notice {
+  li {
+    list-style-type: none;
+    padding: .5em 0;
+  }
+}
+
 /* ----- =animation ----- */
 
 .waterdog_static {

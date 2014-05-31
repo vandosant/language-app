@@ -10,14 +10,14 @@ class SessionsController < ApplicationController
       redirect_to "/profile/#{user.id}", :notice => ["welcome, #{user.email}", 'you have successfully logged in']
     else
       @user = User.new
-      flash[:notice] = 'invalid email or password'
+      flash[:notice] = ['invalid email or password']
       render :new
     end
   end
 
   def destroy
     session.clear
-    redirect_to '/', :notice => 'you have successfully logged out'
+    redirect_to '/', :notice => ['you have successfully logged out']
   end
   private
 

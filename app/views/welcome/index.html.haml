@@ -1,5 +1,8 @@
 %div{:id => 'content_container'}
-  = notice
+  - if notice
+    .notice
+      - notice.each do |message|
+        %li= message
   .two_third
     %h1 Languages
     %a{:href => '/portuguese'}portuguese
