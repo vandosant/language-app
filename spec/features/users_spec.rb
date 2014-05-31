@@ -4,6 +4,7 @@ feature 'user authentication' do
   scenario 'users can register and logout' do
     visit '/'
 
+    expect(page).to_not have_link 'logout'
     click_link 'register'
 
     fill_in 'Email', with: 'test@example.com'
@@ -11,6 +12,7 @@ feature 'user authentication' do
     click_button 'Register'
 
     expect(page).to have_content 'welcome, test@example.com'
+    expect(page).to_not have_link 'register'
 
     click_link 'logout'
 
@@ -31,6 +33,7 @@ feature 'user authentication' do
     expect(page).to have_content 'welcome, test@example.com'
     expect(page).to have_content 'you have successfully logged in'
     expect(page).to have_content 'Profile'
+    expect(page).to_not have_link 'login'
   end
 
   scenario 'users cannot register with invalid credentials' do
