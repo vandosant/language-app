@@ -4,8 +4,9 @@
 
     = form_for @user, :url => {:action => 'signin'} do |f|
       - if @user.errors.any?
-        - @user.errors.full_messages.each do |error|
-          %p= error
+        .errors
+          - @user.errors.full_messages.each do |error|
+            %p= error
 
       .field-container
         = f.label :email
