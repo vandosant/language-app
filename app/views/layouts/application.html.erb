@@ -32,6 +32,7 @@
       </ul>
       <ul id="authentication_links">
         <% if logged_in? %>
+          <li><%= link_to "profile", profile_path(session[:id]) %></li>
           <li><%= link_to "logout", logout_path %></li>
         <% else %>
           <li><%= link_to "register", register_path %></li>

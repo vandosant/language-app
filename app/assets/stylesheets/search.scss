@@ -1,4 +1,5 @@
 @import "mixins";
+@import "variables";
 
 .results-container {
   // this will only fill the width of the fields / labels
@@ -16,13 +17,26 @@
   }
 
   .result-output {
-    color: #595151;
+    color: $text_color;
   }
 
   .result-output li:first-child {
     font-size: 1.5em;
     font-style: bold;
-    color: #BF496A;
+    color: $nav_color;
   }
-;
+}
+
+.save-button {
+  font-size: 50%;
+  box-sizing: border-box;
+  color: #595151;
+  border: 1px solid $outline_color;
+  outline-color: $nav_color;
+  padding: .1em .3em;
+  vertical-align: middle;
+  &:hover {
+    background-color: $nav_color;
+    color: $header_color;
+  }
 }

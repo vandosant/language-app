@@ -9,6 +9,8 @@ class PortugueseController < ApplicationController
   end
 
   def translate
+      @word = Word.new
+
     if params[:english]
       @english_word = params[:english]
       @word_data = GlosbeApi.translate_word("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=#{@english_word.gsub(/\s/, '_')}", @english_word)
@@ -18,6 +20,13 @@ class PortugueseController < ApplicationController
     else
       @results = true
     end
+  end
+
+  def create
+    @user = User.find(session[:id])
+    word = Word.create!(:english => params[:word][:english], :user_id => @user.id)
+    Translation.create!(:portuguese => params[:word][:portuguese], :word_id => word.id)
+    redirect_to "/profile/#{@user.id}", :notice => ["word successfully added"]
   end
 
   def words

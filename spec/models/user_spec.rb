@@ -57,4 +57,13 @@ describe User do
     user = User.new(email: 'user@test.com', password: '123')
     expect(user).to_not be_valid
   end
+
+  it 'allows saving of words' do
+    @user.save!
+
+    word = Word.create!(:english => 'hello', :user_id => @user.id)
+    word_translation = Translation.create!(:portuguese => 'olá', :word_id => word.id)
+
+    expect(@user.words.last.user_id).to eq @user.id
+  end
 end

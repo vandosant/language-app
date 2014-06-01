@@ -78,4 +78,38 @@ feature 'vocabulary' do
       expect(page).to have_content 'Sorry, no results.'
     end
   end
+
+  scenario 'logged in users can add phrases to a personal phrasebook' do
+    VCR.use_cassette('portuguese/translate/goodbye', record: :all) do
+      user = User.create!(email: 'user@example.com', password: 'password123')
+      visit '/'
+
+      click_link 'login'
+
+      fill_in 'Email', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Login'
+
+      expect(page).to have_content 'Phrasebook'
+      expect(page).to have_content 'No saved phrases.'
+
+      within('nav') do
+        click_link 'portuguese'
+      end
+
+      click_link 'translate'
+
+      fill_in 'english', with: 'goodbye'
+      click_button 'translate to portuguese'
+
+      expect(page).to have_content 'adeus'
+
+      find("[data-id='adeus']").click
+
+      click_link 'profile'
+
+      expect(page).to have_content 'adeus'
+      expect(page).to have_content 'goodbye'
+    end
+  end
 end

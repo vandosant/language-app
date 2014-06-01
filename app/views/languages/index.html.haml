@@ -4,3 +4,21 @@
     .notice
       - notice.each do |message|
         %li= message
+  %article
+    %h3 Phrasebook
+    .phrasebook
+      - if @user.words.length == 0
+        No saved phrases.
+      - else
+        %table
+          %tr
+            %td
+              Portuguese
+            %td
+              English
+          - @user.words.each do |word|
+            %tr
+              - word.translations.each do |translation|
+                %td= translation.portuguese
+              %td= word.english
+

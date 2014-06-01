@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
             :uniqueness => { :case_sensitive => false, :message => 'is already registered' }
   validates :password, :length => { :minimum => 6, :message => 'is too short' }
   has_secure_password
+  has_many :words
 end

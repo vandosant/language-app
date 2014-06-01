@@ -13,6 +13,14 @@
               -if words.is_a?(Hash)
                 %hr
                 = words.keys[0].to_s
+                - if logged_in?
+                  = form_for @word, url: { action: 'create'},
+                    data: { behavior: 'save-word' } do |f|
+                    = f.hidden_field :english, { value: params[:english] }
+                    = f.hidden_field :portuguese, { value: words.keys[0].to_s }
+                    = f.submit 'save', class: 'save-button', data: { id: words.keys[0].to_s }
+                  .save-confirmation
+                    got it!
                 - @results = true
                 %br
                 %br
@@ -28,6 +36,15 @@
               - else
                 %hr
                 = words
+                - if logged_in?
+                  = form_for @word, url: { action: 'create'},
+                    data: { behavior: 'save-word' } do |f|
+                    = f.hidden_field :english, { value: params[:english] }
+                    = f.hidden_field :portuguese, { value: words }
+                    = f.submit 'save', class: 'save-button', data: { id: words }
+                  .save-confirmation
+                    got it!
+
     - unless @results
       .results-container
         .result-output

@@ -15,11 +15,13 @@ Rails.application.routes.draw do
 
   post '/portuguese/translate', to: 'portuguese#translate'
 
+  post '/portuguese/words', to: 'portuguese#create'
+
   get '/register', to: 'users#register'
 
   post '/register', to: 'users#create'
 
-  get '/profile/:id', to: 'languages#index'
+  get '/profile/:id', to: 'languages#index', as: :profile
 
   resource :sessions
 
