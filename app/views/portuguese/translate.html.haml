@@ -14,12 +14,12 @@
                 %hr
                 = words.keys[0].to_s
                 - if logged_in?
-                  = form_for @word, url: { action: 'create'},
+                  = form_for @word, remote: true, url: { action: 'create'},
                     data: { behavior: 'save-word' } do |f|
                     = f.hidden_field :english, { value: params[:english] }
                     = f.hidden_field :portuguese, { value: words.keys[0].to_s }
-                    = f.submit 'save', class: 'save-button', data: { id: words.keys[0].to_s }
-                  .save-confirmation
+                    = f.submit 'save', class: 'save-button', data: { id: words.keys[0].to_s.gsub(/\s/, '_') }
+                  .save-confirmation{ data: { container: words.keys[0].to_s.gsub(/\s/, '_') } }
                     got it!
                 - @results = true
                 %br
@@ -37,12 +37,12 @@
                 %hr
                 = words
                 - if logged_in?
-                  = form_for @word, url: { action: 'create'},
+                  = form_for @word, remote: true, url: { action: 'create'},
                     data: { behavior: 'save-word' } do |f|
                     = f.hidden_field :english, { value: params[:english] }
                     = f.hidden_field :portuguese, { value: words }
                     = f.submit 'save', class: 'save-button', data: { id: words }
-                  .save-confirmation
+                  .save-confirmation{ data: { container: words } }
                     got it!
 
     - unless @results

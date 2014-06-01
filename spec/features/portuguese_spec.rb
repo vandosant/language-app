@@ -80,7 +80,7 @@ feature 'vocabulary' do
   end
 
   scenario 'logged in users can add phrases to a personal phrasebook' do
-    VCR.use_cassette('portuguese/translate/goodbye', record: :all) do
+    VCR.use_cassette('portuguese/translate/goodbye') do
       user = User.create!(email: 'user@example.com', password: 'password123')
       visit '/'
 

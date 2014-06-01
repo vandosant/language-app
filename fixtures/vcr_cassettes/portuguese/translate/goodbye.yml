@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 01 Jun 2014 19:01:56 GMT
+      - Sun, 01 Jun 2014 22:32:59 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -29,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       Expires:
-      - Sun, 01 Jun 2014 19:01:55 GMT
+      - Sun, 01 Jun 2014 22:32:58 GMT
       Cache-Control:
       - no-cache
     body:
@@ -78,7 +78,7 @@ http_interactions:
         aXMgZGVwYXJ0aW5nLiIsImxhbmd1YWdlIjoiZW5nIn1dfV0sImZyb20iOiJl
         bmcifQ==
     http_version: 
-  recorded_at: Sun, 01 Jun 2014 19:01:56 GMT
+  recorded_at: Sun, 01 Jun 2014 22:32:58 GMT
 - request:
     method: get
     uri: http://glosbe.com/gapi/tm?dest=por&format=json&from=eng&phrase=goodbye
@@ -100,7 +100,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 01 Jun 2014 19:01:56 GMT
+      - Sun, 01 Jun 2014 22:33:00 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -108,7 +108,7 @@ http_interactions:
       Connection:
       - keep-alive
       Expires:
-      - Sun, 01 Jun 2014 19:01:55 GMT
+      - Sun, 01 Jun 2014 22:32:59 GMT
       Cache-Control:
       - no-cache
     body:
@@ -182,5 +182,5 @@ http_interactions:
         ZGVzcGVkaXIiLCJmaXJzdCI6IkkgY29tZSB0byBzYXkgZ29vZGJ5ZSJ9XSwi
         Zm91bmQiOjMzNTB9
     http_version: 
-  recorded_at: Sun, 01 Jun 2014 19:01:56 GMT
+  recorded_at: Sun, 01 Jun 2014 22:32:59 GMT
 recorded_with: VCR 2.9.0
