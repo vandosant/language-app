@@ -197,6 +197,29 @@ header {
   color: $error_color;
 }
 
+.blockquote {
+  display: table;
+  width: 100%;
+  height: 100%;
+  margin: 25% 0;
+  div {
+    display: table-cell;
+    vertical-align: middle;
+    background: #B39C82;
+    p {
+      font-family: 'PT Sans', sans-serif;
+      color: $text_color;
+      display: block;
+      font-size: 1.3em;
+      padding-left: 1.5em;
+    }
+  }
+}
+
+hr {
+  @include horizontal_rule;
+}
+
 /* ----- =animation ----- */
 
 .waterdog_static {
