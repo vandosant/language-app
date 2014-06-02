@@ -1,6 +1,8 @@
 require 'glosbe_api'
 
 class PortugueseController < ApplicationController
+  respond_to :js, only: :create
+
   def index
   end
 
@@ -24,9 +26,19 @@ class PortugueseController < ApplicationController
 
   def create
     @user = User.find(session[:id])
-    word = Word.create!(:english => params[:word][:english], :user_id => @user.id)
-    Translation.create!(:portuguese => params[:word][:portuguese], :word_id => word.id)
-    redirect_to "/profile/#{@user.id}", :notice => ["word successfully added"]
+    word = Word.create(:english => params[:word][:english], :user_id => @user.id)
+    @translation = Translation.new(:portuguese => params[:word][:portuguese], :word_id => word.id)
+
+    respond_to do |format|
+      if @translation.save
+        format.html { redirect_to "/profile/#{user.id}", :notice => ["word successfully added"] }
+        format.js   {}
+        format.json { render json: @translation, status: :created, location: @translation }
+      else
+        format.html { render action: "translate" }
+        format.json { render json: @translation.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def words
