@@ -31,7 +31,7 @@ class PortugueseController < ApplicationController
 
     respond_to do |format|
       if @translation.save
-        format.html { redirect_to "/profile/#{user.id}", :notice => ["word successfully added"] }
+        format.html { redirect_to "/profile/#{@user.id}", :notice => ["word successfully added"] }
         format.js   {}
         format.json { render json: @translation, status: :created, location: @translation }
       else
