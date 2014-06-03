@@ -250,6 +250,11 @@ hr {
   @include horizontal_rule;
 }
 
+h1, h2, h3 {
+  color: $text_color;
+  font-family: 'PT Sans', sans-serif;
+}
+
 /* ----- =animation ----- */
 
 .waterdog_static {
