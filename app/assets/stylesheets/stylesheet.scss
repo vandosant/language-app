@@ -169,16 +169,10 @@ header {
   color: $body_color;
 }
 
-#next_button {
-  font-size: 110%;
-  background: white;
-  padding: 1em 3em;
-  border: .5em solid $header_color;
-  outline-color: $text_color;
-}
-
-#last_button {
-  font-size: 110%;
+#next_button, #last_button {
+  color: $text_color;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 130%;
   background: white;
   padding: 1em 3em;
   border: .5em solid $header_color;

@@ -30,6 +30,8 @@ $(document).on("click", "[data-behavior=new-category]", function (event) {
   var targetIndex = langua.categories.indexOf(targetCategory);
   langua.wordKey = langua.categories[targetIndex];
   langua.currentIndex = 0;
+  $("[data-behavior=new-category]").removeClass('active');
+  $(event.target).addClass('active');
   langua.showPair();
 });
 
@@ -38,6 +40,7 @@ $(document).ready(function () {
     langua.categories = data.categories;
     langua.wordKey = langua.categories[0];
     langua.words = data.words;
+    $('[data-id=' + langua.wordKey + ']').addClass('active');
     langua.showPair();
   });
 });
