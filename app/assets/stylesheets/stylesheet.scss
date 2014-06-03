@@ -84,6 +84,12 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 0 .5em;
+  #footer_container {
+    color: $text_color;
+    font-size: 70%;
+    text-align: right;
+    margin: 1.5em auto;
+  }
 }
 
 /* ----- =header ----- */
