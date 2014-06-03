@@ -1,14 +1,16 @@
 %div{:id => 'content_container'}
-  %h2 Profile
+  %h1 Profile
   - if notice
     .notice
       - notice.each do |message|
         %li= message
   %article
-    %h3 Phrasebook
     .phrasebook
+      %hr
+      %h2 Phrasebook
       - if @user.words.length == 0
-        No saved phrases.
+        %p
+          No saved phrases.
       - else
         %table
           %tr
@@ -21,4 +23,5 @@
               - word.translations.each do |translation|
                 %td= translation.portuguese
               %td= word.english
-
+      %br
+      %hr

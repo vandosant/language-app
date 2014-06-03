@@ -1,7 +1,22 @@
 @import "variables";
 
 .phrasebook {
-  display: table;
+  width: 90%;
+  height: 100%;
+  color: $text_color;
+  background: #B39C82;
+  padding: 3em 6em 3em 6em;
+  table {
+    margin: 0 auto;
+    font-size: 120%;
+    width: 100%;
+    tr:first-child {
+      font-weight: bold;
+      text-align: left;
+      td {
+      }
+    }
+  }
 }
 
 .save-confirmation {
@@ -9,6 +24,7 @@
   display: none;
   vertical-align: middle;
 }
+
 .save-confirmation.active {
   display: inline;
 }

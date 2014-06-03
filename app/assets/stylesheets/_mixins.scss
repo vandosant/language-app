@@ -24,4 +24,8 @@
   text-align: center;
   display: inline-block;
   padding: .5em 2em;
+  outline: none;
+  &:hover {
+    background: $nav_color;
+  }
 }
