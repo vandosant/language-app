@@ -246,6 +246,19 @@ header {
   }
 }
 
+.blockquote-portuguese {
+  @extend .blockquote-about;
+  margin: 0;
+  width: 50%;
+  text-align: center;
+  div {
+    p {
+      font-size: 1.5em;
+      padding: 0;
+    }
+  }
+}
+
 hr {
   @include horizontal_rule;
 }
