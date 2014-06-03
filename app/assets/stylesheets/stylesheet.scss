@@ -197,6 +197,8 @@ header {
 }
 
 .notice {
+  color: $text_color;
+  font-size: 80%;
   li {
     list-style-type: none;
     padding: .5em 0;
@@ -205,6 +207,7 @@ header {
 
 .alert {
   @extend .notice;
+  font-size: 100%;
   color: $error_color;
 }
 
