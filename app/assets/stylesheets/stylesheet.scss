@@ -188,13 +188,18 @@ header {
 .categories {
   margin-top: 2em;
   text-align: center;
+  font-size: 120%;
   .word_category {
     @include category;
+    border: 2px solid #B39C82;
+    padding: .3em 1em .4em 1em;
+    font: $text_color;
   }
 }
 
 .word_category.active {
   background: $nav_color;
+  color: #B39C82;
 }
 
 .notice {
