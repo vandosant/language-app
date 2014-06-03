@@ -51,7 +51,6 @@ class PortugueseController < ApplicationController
           ["excuse me", "desculpe"],
           ["how are you?", "como está?"],
           ["good afternoon", "boa tarde"],
-          ["goodbye", "adeus"],
         ],
         :numbers => [
           [1, 'um'],

@@ -28,8 +28,8 @@ feature 'vocabulary' do
 
     find("#last_button").click
 
-    expect(page).to have_content "goodbye"
-    expect(page).to have_content "adeus"
+    expect(page).to have_content "good afternoon"
+    expect(page).to have_content "boa tarde"
 
     find("[data-id='numbers']").click
 
