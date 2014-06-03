@@ -14,10 +14,12 @@ feature 'vocabulary' do
     expect(page).to have_content "hello"
     expect(page).to have_content "olá"
 
+
     find("#next_button").click
 
-    expect(page).to have_content "goodbye"
-    expect(page).to have_content "adeus"
+    expect(page).to have_content "good morning"
+    expect(page).to have_content "bom dia"
+
 
     find("#last_button").click
 
@@ -26,8 +28,8 @@ feature 'vocabulary' do
 
     find("#last_button").click
 
-    expect(page).to have_content "you're welcome"
-    expect(page).to have_content "de nada"
+    expect(page).to have_content "goodbye"
+    expect(page).to have_content "adeus"
 
     find("[data-id='numbers']").click
 

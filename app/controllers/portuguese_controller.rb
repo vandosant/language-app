@@ -7,7 +7,7 @@ class PortugueseController < ApplicationController
   end
 
   def vocabulary
-    @categories = ['basics', 'numbers']
+    @categories = ['basics', 'numbers', 'phrases']
   end
 
   def translate
@@ -43,16 +43,15 @@ class PortugueseController < ApplicationController
 
   def words
     @words = {
-      :categories => ['basics', 'numbers'],
+      :categories => ['salutations', 'numbers', 'phrases'],
       :words => {
-        :basics => [
+        :salutations => [
           ["hello", "olá"],
-          ["goodbye", "adeus"],
           ["good morning", "bom dia"],
+          ["excuse me", "desculpe"],
+          ["how are you?", "como está?"],
           ["good afternoon", "boa tarde"],
-          ["please", "faz favor"],
-          ["thank you", "obrigado"],
-          ["you're welcome", "de nada"]
+          ["goodbye", "adeus"],
         ],
         :numbers => [
           [1, 'um'],
@@ -79,6 +78,17 @@ class PortugueseController < ApplicationController
           [40, 'quarenta'],
           [100, 'cem'],
           [1000, 'mil']
+        ],
+        :phrases => [
+          ["please", "faz favor"],
+          ["thank you", "obrigado"],
+          ["you're welcome", "de nada"],
+          ["where is?", "onde está?"],
+          ["do you have?", "tem"],
+          ["my name is", "chamo me"],
+          ["what time?", "a que horas?"],
+          ["very well", "muito bem"],
+          ["when do you open?", "quando abrem?"],
         ]
       }
     }
