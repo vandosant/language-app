@@ -35,7 +35,7 @@ body {
 nav {
   background-color: $nav_color;
   color: $text_color;
-  padding: .5em 0;
+  padding: .4em 0;
   overflow: hidden;
   ul {
     padding: 0;
@@ -46,6 +46,7 @@ nav {
       a {
         text-decoration: none;
         padding-right: 2em;
+        font-size: 130%;
       }
     }
   }
@@ -198,7 +199,7 @@ header {
 
 .notice {
   color: $text_color;
-  font-size: 80%;
+  font-size: 90%;
   li {
     list-style-type: none;
     padding: .5em 0;
