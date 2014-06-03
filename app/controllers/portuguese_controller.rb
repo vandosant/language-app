@@ -7,7 +7,7 @@ class PortugueseController < ApplicationController
   end
 
   def vocabulary
-    @categories = ['basics', 'numbers', 'phrases']
+    @categories = ['salutations', 'numbers', 'phrases']
   end
 
   def translate
