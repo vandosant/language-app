@@ -3,7 +3,7 @@
 
 language-app
 ============
-+ Learn Portuguese! You can (eventually) learn with vocabulary, flashcards, and translation features.
++ Learn Portuguese! You can learn with vocabulary and translation features.
 
 Development
 ===========
