@@ -38,4 +38,5 @@ group :test do
   gem 'vcr', '~> 2.9.0'
   gem 'webmock', '~> 1.17.4'
   gem 'selenium-webdriver'
+  gem 'launchy', '~> 2.4.2'
 end
