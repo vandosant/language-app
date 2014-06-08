@@ -11,16 +11,26 @@ class PortugueseController < ApplicationController
   end
 
   def translate
+    if params[:english]
+      @search = params[:english]
       @word = Word.new
 
-    if params[:english]
-      @english_word = params[:english]
-      @word_data = GlosbeApi.translate_word("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=#{@english_word.gsub(/\s/, '_')}", @english_word)
-      phrase_data = GlosbeApi.translate_phrase("http://glosbe.com/gapi/tm?from=eng&dest=por&format=json&phrase=#{@english_word.gsub(/\s/, '_')}")
-      @matched_data = GlosbeApi.match_examples(@word_data, phrase_data)
-      @results = false
+      word_data = GlosbeApi.translate_word("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=#{@search.gsub(/\s/, '_')}", @english_word)
+      phrase_data = GlosbeApi.translate_phrase("http://glosbe.com/gapi/tm?from=eng&dest=por&format=json&phrase=#{@search.gsub(/\s/, '_')}")
+
+      if word_data != []
+        @results = true
+
+        if phrase_data != []
+          @data = GlosbeApi.match_examples(word_data, phrase_data)
+        else
+          @data = word_data
+        end
+      else
+        @results = false
+      end
     else
-      @results = true
+      @search = nil
     end
   end
 
@@ -32,7 +42,7 @@ class PortugueseController < ApplicationController
     respond_to do |format|
       if @translation.save
         format.html { redirect_to "/profile/#{@user.id}", :notice => ["word successfully added"] }
-        format.js   {}
+        format.js {}
         format.json { render json: @translation, status: :created, location: @translation }
       else
         format.html { render action: "translate" }

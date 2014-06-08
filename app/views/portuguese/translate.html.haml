@@ -2,12 +2,12 @@
   .form-container
     = form_tag('/portuguese/translate', :method => 'post') do
       .field-container
-        = text_field_tag(:english, @english_word)
+        = text_field_tag(:english, @search)
         = submit_tag('translate to portuguese')
 
-    -if @matched_data
+    -if @data
       .results-container
-        - @matched_data.each do |words|
+        - @data.each do |words|
           .result-output
             %li
               -if words.is_a?(Hash)
@@ -40,12 +40,12 @@
                   = form_for @word, remote: true, url: { action: 'create'},
                     data: { behavior: 'save-word' } do |f|
                     = f.hidden_field :english, { value: params[:english] }
-                    = f.hidden_field :portuguese, { value: words }
-                    = f.submit 'save', class: 'save-button', data: { id: words }
-                  .save-confirmation{ data: { container: words } }
+                    = f.hidden_field :portuguese, { value: words.to_s.gsub(/\s/, '_') }
+                    = f.submit 'save', class: 'save-button', data: { id: words.to_s.gsub(/\s/, '_') }
+                  .save-confirmation{ data: { container: words.to_s.gsub(/\s/, '_') } }
                     got it!
 
-    - unless @results
+    - if @search != nil && !@results
       .results-container
         .result-output
           %li
