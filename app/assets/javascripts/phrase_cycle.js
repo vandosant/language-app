@@ -25,13 +25,12 @@ $(document).on("click", "[data-behavior=last-word]", function () {
   langua.showPair();
 });
 
-$(document).on("click", "[data-behavior=new-category]", function (event) {
-  var targetCategory = event.target.dataset.id;
-  var targetIndex = langua.categories.indexOf(targetCategory);
+$(document).on("click", "[data-behavior=new-category]", function () {
+  var targetIndex = langua.categories.indexOf(this.dataset.id);
   langua.wordKey = langua.categories[targetIndex];
   langua.currentIndex = 0;
   $("[data-behavior=new-category]").removeClass('active');
-  $(event.target).addClass('active');
+  $(this).addClass('active');
   langua.showPair();
 });
 

@@ -1,4 +1,4 @@
-$(document).on("click", "[data-behavior=save-word]", function (event) {
+$(document).on("click", "[data-behavior=save-word]", function () {
   var targetWord = event.target.dataset.id;
   var targetContainer = $('[data-container=' + targetWord + ']');
   $(targetContainer).toggleClass('active');
