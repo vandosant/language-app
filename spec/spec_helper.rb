@@ -11,10 +11,4 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_base_class_for_anonymous_controllers = false
   config.order = "random"
-
-  VCR.configure do |c|
-    c.cassette_library_dir = 'fixtures/vcr_cassettes'
-    c.hook_into :webmock # or :fakeweb
-    c.ignore_localhost = true
-  end
 end
