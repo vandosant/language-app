@@ -4,6 +4,6 @@ $(document).on("click", "[data-behavior=save-word]", function () {
   $(targetContainer).toggleClass('active');
 });
 
-$(document).on("ajax:success", "[data-behavior=save-word]", function (event, xhr, status) {
+$(document).on("ajax:success", "[data-behavior=save-word]", function (xhr) {
   $(this).append(xhr.responseText);
 });
