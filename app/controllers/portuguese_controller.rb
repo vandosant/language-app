@@ -15,8 +15,8 @@ class PortugueseController < ApplicationController
       @search = params[:english]
       @word = Word.new
 
-      word_data = GlosbeApi.translate_word("http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=#{@search.gsub(/\s/, '_')}", @english_word)
-      phrase_data = GlosbeApi.translate_phrase("http://glosbe.com/gapi/tm?from=eng&dest=por&format=json&phrase=#{@search.gsub(/\s/, '_')}")
+      word_data = GlosbeApi.translate_word(@search)
+      phrase_data = GlosbeApi.translate_phrase(@search)
 
       if word_data != []
         @results = true

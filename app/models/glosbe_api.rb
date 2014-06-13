@@ -1,7 +1,10 @@
 require 'open-uri'
 
 class GlosbeApi
-  def self.translate_word(api_url, english_word)
+  def self.translate_word(search)
+    search_query = search.gsub(/\s/, '_')
+    api_url = "http://glosbe.com/gapi/translate?from=eng&dest=por&format=json&phrase=#{search_query}"
+
     response = open(api_url).read
     parsed_response = JSON.parse(response)
 
@@ -17,15 +20,20 @@ class GlosbeApi
       thing['phrase']['text']
     end
 
-    word = Word.create(:english => english_word)
+    if result.any?
+      word = Word.create(:english => search)
 
-    result.each do |translation|
-      Translation.create(:portuguese => translation, :word_id => word.id)
+      result.each do |translation|
+        Translation.create(:portuguese => translation, :word_id => word.id)
+      end
     end
     result
   end
 
-  def self.translate_phrase(api_url)
+  def self.translate_phrase(search)
+    search_query = search.gsub(/\s/, '_')
+    api_url = "http://glosbe.com/gapi/tm?from=eng&dest=por&format=json&phrase=#{search_query}"
+
     response = open(api_url).read
     parsed_response = JSON.parse(response)
 
