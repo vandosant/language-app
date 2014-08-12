@@ -45,8 +45,8 @@ nav {
       list-style-type: none;
       a {
         text-decoration: none;
-        padding-right: 2em;
-        font-size: 130%;
+        padding-right: 1em;
+        font-size: 1.2em;
       }
     }
   }
@@ -87,9 +87,9 @@ footer {
   padding: 0 .5em;
   #footer_container {
     color: $text_color;
-    font-size: 70%;
+    font-size: .8em;
     text-align: right;
-    margin: 1.5em auto;
+    margin: 1.4em auto;
   }
 }
 
@@ -172,7 +172,7 @@ header {
 #next_button, #last_button {
   color: $text_color;
   font-family: 'PT Sans', sans-serif;
-  font-size: 130%;
+  font-size: 1.2em;
   background: white;
   padding: 1em 3em;
   border: .5em solid $header_color;
@@ -182,7 +182,7 @@ header {
 .categories {
   margin-top: 2em;
   text-align: center;
-  font-size: 120%;
+  font-size: 1.2em;
   .word_category {
     @include category;
     border: 2px solid #B39C82;
@@ -198,7 +198,7 @@ header {
 
 .notice {
   color: $text_color;
-  font-size: 90%;
+  font-size: .9em;
   li {
     list-style-type: none;
     padding: .5em 0;
@@ -207,7 +207,7 @@ header {
 
 .alert {
   @extend .notice;
-  font-size: 100%;
+  font-size: 1.2em;
   color: $error_color;
 }
 
@@ -224,7 +224,7 @@ header {
       font-family: 'PT Sans', sans-serif;
       color: $text_color;
       display: block;
-      font-size: 1.3em;
+      font-size: 1.2em;
       padding-left: 1.5em;
     }
   }
@@ -236,7 +236,7 @@ header {
   div {
     width: 60%;
     p {
-      font-size: 2.4em;
+      font-size: 2em;
       line-height: 80%;
       a {
         text-decoration: none;
