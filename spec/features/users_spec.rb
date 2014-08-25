@@ -14,6 +14,11 @@ feature 'user authentication' do
     expect(page).to have_content 'welcome, test@example.com'
     expect(page).to_not have_link 'register'
 
+    # user gets a new registration email
+    email_body = ActionMailer::Base.deliveries.last.body.raw_source
+    expect(email_body).to include('Thank you for signing up!')
+
+    # user logs out
     click_link 'logout'
 
     expect(page).to have_no_content 'welcome, test@example.com'

@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
+  gem 'sendgrid', '~> 1.2.0'
 end
 
 group :test do
@@ -40,3 +41,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'launchy', '~> 2.4.2'
 end
+
+gem 'dotenv-rails', '~> 0.11.1', :groups => [:development, :test]

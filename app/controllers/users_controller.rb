@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     user.password = params[:user][:password]
     if user.save
       log_in(user)
+      UserMailer.new_registration(user).deliver
       redirect_to "/profile/#{user.id}", :notice => ["welcome, #{user.email}"]
     else
       @user = user
